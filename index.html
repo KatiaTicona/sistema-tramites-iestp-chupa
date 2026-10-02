@@ -1,111 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trámites Académicos | IESTP Chupa</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Digital de Trámites | IESTP Chupa</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="app">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="brand-mark">IE</div>
-      <div><strong>IESTP Chupa</strong><span>Secretaría Académica</span></div>
-    </div>
-    <nav>
-      <button class="nav-item active" data-view="dashboard">▦ <span>Inicio</span></button>
-      <button class="nav-item" data-view="nuevo">＋ <span>Nuevo trámite</span></button>
-      <button class="nav-item" data-view="seguimiento">◉ <span>Seguimiento</span></button>
-      <button class="nav-item" data-view="tramites">☷ <span>Trámites</span></button>
-      <button class="nav-item" data-view="reportes">▥ <span>Reportes</span></button>
-    </nav>
-    <div class="sidebar-bottom">
-      <div class="user-mini"><div class="avatar">KD</div><div><strong>Katia D. Ticona</strong><span>Administradora</span></div></div>
-    </div>
-  </aside>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">IE</div>
+        <div><strong>IESTP Chupa</strong><span>Secretaría Académica</span></div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="dashboard">⌂ <span>Inicio</span></button>
+        <button class="nav-item" data-view="nuevo">＋ <span>Nuevo trámite</span></button>
+        <button class="nav-item" data-view="seguimiento">⌕ <span>Seguimiento</span></button>
+        <button class="nav-item" data-view="tramites">▤ <span>Trámites</span></button>
+        <button class="nav-item" data-view="reportes">▥ <span>Reportes</span></button>
+      </nav>
+      <div class="sidebar-footer">Prototipo V.0.2<br><small>GitHub Pages</small></div>
+    </aside>
 
-  <main class="main">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">SISTEMA DIGITAL</p>
-        <h1 id="page-title">Panel de Secretaría Académica</h1>
-      </div>
-      <div class="top-actions">
-        <span class="status-dot">● Sistema operativo</span>
-        <button class="icon-btn" title="Notificaciones">🔔</button>
-      </div>
-    </header>
-
-    <section id="dashboard" class="view active-view">
-      <div class="hero">
-        <div><p class="eyebrow">GESTIÓN DE TRÁMITES</p><h2>Atención académica más ordenada y trazable.</h2>
-        <p>Registra solicitudes, consulta estados y centraliza la atención de los estudiantes.</p></div>
-        <button class="primary" onclick="showView('nuevo')">＋ Registrar trámite</button>
-      </div>
-      <div class="cards">
-        <div class="metric"><span>Total de trámites</span><strong id="m-total">24</strong><small>registrados</small></div>
-        <div class="metric"><span>Pendientes</span><strong id="m-pending">8</strong><small>requieren atención</small></div>
-        <div class="metric"><span>En proceso</span><strong id="m-process">7</strong><small>en seguimiento</small></div>
-        <div class="metric"><span>Finalizados</span><strong id="m-done">9</strong><small>atendidos</small></div>
-      </div>
-      <div class="grid-2">
-        <div class="panel">
-          <div class="panel-head"><div><h3>Trámites recientes</h3><span>Últimas solicitudes registradas</span></div><button class="text-btn" onclick="showView('tramites')">Ver todos →</button></div>
-          <div id="recent-list"></div>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">SISTEMA DIGITAL</div>
+          <h1 id="pageTitle">Panel de Secretaría Académica</h1>
         </div>
-        <div class="panel">
-          <div class="panel-head"><div><h3>Estado de atención</h3><span>Distribución actual</span></div></div>
-          <div class="progress-row"><span>Por hacer</span><b>33%</b></div><div class="bar"><i style="width:33%"></i></div>
-          <div class="progress-row"><span>En proceso</span><b>29%</b></div><div class="bar"><i style="width:29%"></i></div>
-          <div class="progress-row"><span>Finalizados</span><b>38%</b></div><div class="bar"><i style="width:38%"></i></div>
-          <div class="legend"><span><i class="dot pending"></i>Por hacer</span><span><i class="dot process"></i>En proceso</span><span><i class="dot done"></i>Finalizado</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="nuevo" class="view">
-      <div class="section-head"><div><p class="eyebrow">REGISTRO</p><h2>Nuevo trámite académico</h2><p>Ingrese la información necesaria para iniciar la solicitud.</p></div></div>
-      <div class="panel form-panel">
-        <form id="form-tramite">
-          <div class="form-grid">
-            <label>Nombre del estudiante<input id="student" required placeholder="Ej. María Quispe Mamani"></label>
-            <label>DNI<input id="dni" required maxlength="8" placeholder="8 dígitos"></label>
-            <label>Tipo de trámite<select id="type" required><option value="">Seleccionar...</option><option>Certificado de estudios</option><option>Constancia de estudios</option><option>Récord académico</option><option>Duplicado de documento</option><option>Convalidación</option><option>Otro</option></select></label>
-            <label>Programa de estudios<input id="program" placeholder="Ej. Computación e Informática"></label>
-            <label class="full">Descripción de la solicitud<textarea id="description" rows="4" required placeholder="Detalle brevemente la solicitud..."></textarea></label>
-          </div>
-          <div class="form-footer"><span>Los campos marcados son obligatorios.</span><button type="submit" class="primary">Registrar solicitud</button></div>
-        </form>
-        <div id="success" class="success hidden"></div>
-      </div>
-    </section>
-
-    <section id="seguimiento" class="view">
-      <div class="section-head"><div><p class="eyebrow">CONSULTA</p><h2>Seguimiento del trámite</h2><p>Consulte el estado mediante el código de solicitud.</p></div></div>
-      <div class="search-box"><input id="search-code" placeholder="Ej. TRM-2026-00124"><button class="primary" onclick="track()">Consultar</button></div>
-      <div id="tracking-result" class="hidden"></div>
-    </section>
-
-    <section id="tramites" class="view">
-      <div class="section-head"><div><p class="eyebrow">ADMINISTRACIÓN</p><h2>Trámites registrados</h2><p>Gestione y actualice las solicitudes recibidas.</p></div><button class="primary" onclick="showView('nuevo')">＋ Nuevo trámite</button></div>
-      <div class="panel table-panel"><div class="filters"><input id="filter" oninput="renderTable()" placeholder="Buscar por código, estudiante o trámite..."><select id="statusFilter" onchange="renderTable()"><option value="">Todos los estados</option><option>Por hacer</option><option>En proceso</option><option>En revisión</option><option>Finalizado</option></select></div>
-      <div class="table-wrap"><table><thead><tr><th>Código</th><th>Estudiante</th><th>Trámite</th><th>Fecha</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="table-body"></tbody></table></div></div>
-    </section>
-
-    <section id="reportes" class="view">
-      <div class="section-head"><div><p class="eyebrow">CONTROL</p><h2>Reportes e indicadores</h2><p>Información básica para el seguimiento de la atención.</p></div></div>
-      <div class="cards">
-        <div class="metric"><span>Tiempo promedio</span><strong>2.8</strong><small>días por trámite</small></div>
-        <div class="metric"><span>Atención dentro del plazo</span><strong>84%</strong><small>de solicitudes</small></div>
-        <div class="metric"><span>Solicitudes este mes</span><strong>18</strong><small>registradas</small></div>
-      </div>
-      <div class="panel"><div class="panel-head"><div><h3>Flujo de atención</h3><span>Vista conceptual del proceso</span></div></div>
-        <div class="workflow"><div><b>01</b><span>Recepción</span></div><div class="arrow">→</div><div><b>02</b><span>Revisión</span></div><div class="arrow">→</div><div><b>03</b><span>Atención</span></div><div class="arrow">→</div><div><b>04</b><span>Entrega</span></div></div>
-      </div>
-    </section>
-  </main>
-</div>
-<script src="app.js"></script>
+        <div class="user-chip">👤 Secretaría</div>
+      </header>
+      <section id="app"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
 </body>
 </html>

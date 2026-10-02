@@ -1,26 +1,21 @@
-# Prototipo — Sistema Digital para Trámites Académicos | IESTP Chupa
+# Sistema Digital de Trámites Académicos – IESTP Chupa
 
-Prototipo navegable en HTML, CSS y JavaScript.
+Prototipo V.0.2 publicado mediante GitHub Pages.
 
-## Módulos
+## Funcionalidades
 - Panel de Secretaría Académica
-- Registro de nuevo trámite
-- Seguimiento mediante código
-- Administración de trámites
-- Reportes e indicadores
-- Flujo conceptual de atención
+- Registro de nuevos trámites
+- Generación de código de seguimiento
+- Consulta por código
+- Gestión y cambio de estados
+- Flujo Recepción → Revisión → Atención → Entrega
+- Historial visual del estado
+- Reportes e indicadores básicos
+- Persistencia local mediante localStorage
 
-## Cómo abrirlo
-Abrir `index.html` directamente en un navegador.
+## Publicación
+El sitio es un prototipo frontend estático. GitHub Pages publica HTML/CSS/JavaScript; no ejecuta Flask/Python.
 
-## Alcance
-Es un prototipo de interfaz y flujo. Los datos son demostrativos y se almacenan temporalmente en memoria del navegador; todavía no existe base de datos, autenticación ni servidor.
-
-## Siguiente etapa técnica
-1. Backend (Flask/Django/Node)
-2. Base de datos
-3. Autenticación por roles
-4. Persistencia de trámites
-5. Notificaciones
-6. Auditoría e historial de cambios
-7. Despliegue
+## Proyecto académico
+Sistema Digital para Mejorar la Atención y Seguimiento de Trámites Académicos en la Secretaría Académica del IESTP Chupa.
+Responsable: Katia Daishy Ticona Casa.
